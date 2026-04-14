@@ -289,4 +289,7 @@ dependencies {
 
     //com.github.AmrDeveloper:CodeView代码编辑已集成到应用内
     //epubLib集成到应用内
+
+    // Google Mobile Ads SDK
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
 }

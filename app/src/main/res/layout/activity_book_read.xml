@@ -9,6 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <!-- 广告容器 -->
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/white"
+        android:elevation="10dp" />
+
     <View
         android:id="@+id/text_menu_position"
         android:layout_width="0dp"

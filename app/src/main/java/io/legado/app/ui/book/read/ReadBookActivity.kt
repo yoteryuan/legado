@@ -969,6 +969,15 @@ class ReadBookActivity : BaseReadBookActivity(),
     }
 
     private fun keyPage(direction: PageDirection) {
+        // 检查是否需要显示广告（只在向后翻页时检查）
+        if (direction == PageDirection.NEXT) {
+            val adManager = ReadAdManager.getInstance()
+            if (adManager.onPageTurn()) {
+                // 显示广告，暂停阅读
+                binding.readView.invisible()
+                return
+            }
+        }
         binding.readView.cancelSelect()
         binding.readView.pageDelegate?.isCancel = false
         binding.readView.pageDelegate?.keyTurnPage(direction)

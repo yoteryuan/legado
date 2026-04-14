@@ -524,6 +524,11 @@
         <meta-data
             android:name="channel"
             android:value="${APP_CHANNEL_VALUE}" />
+
+        <!-- Google Mobile Ads SDK 配置 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2786841664948982~6922581318" />
     </application>
 
     <queries>

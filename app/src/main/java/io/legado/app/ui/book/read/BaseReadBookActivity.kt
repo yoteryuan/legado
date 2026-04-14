@@ -30,6 +30,7 @@ import io.legado.app.lib.theme.ThemeStore
 import io.legado.app.lib.theme.bottomBackground
 import io.legado.app.model.CacheBook
 import io.legado.app.model.ReadBook
+import io.legado.app.ui.book.read.ad.ReadAdManager
 import io.legado.app.ui.book.read.config.BgTextConfigDialog
 import io.legado.app.ui.book.read.config.ClickActionConfigDialog
 import io.legado.app.ui.book.read.config.PaddingConfigDialog
@@ -90,6 +91,19 @@ abstract class BaseReadBookActivity :
                 height = insets.bottom
             }
             windowInsets
+        }
+        // 初始化广告管理器
+        initAdManager()
+    }
+
+    /**
+     * 初始化广告管理器
+     */
+    private fun initAdManager() {
+        ReadAdManager.getInstance().initAdContainer(this, binding.adContainer)
+        ReadAdManager.getInstance().setOnAdCloseListener {
+            // 广告关闭后的回调
+            binding.readView.visible()
         }
     }
 
